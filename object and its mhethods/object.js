@@ -33,3 +33,30 @@ console.log(ask);
 let ask2 = Object.hasOwn(obj , "car")
 console.log(ask2);
 
+console.log(Object.entries(obj));
+
+let specs = {
+    model : "BMW M5",
+}
+let details = {
+    colour : "black",
+}
+
+let newCar = Object.assign({} , specs , details);
+console.log(newCar);
+
+let newCar2 = Object.assign([], specs , details);
+console.log(newCar2);
+
+// console.log( Object.freeze(obj));
+// obj.cast = "Bihari"
+// delete obj.bio
+// obj.name = "Ali"
+// console.log(obj);
+
+
+console.log(Object.seal(obj));
+obj.cast = "Bihari"
+delete obj.bio
+obj.name = "Ali"
+console.log(obj);
