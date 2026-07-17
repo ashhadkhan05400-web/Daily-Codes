@@ -43,9 +43,44 @@ const students = [
 function allfucntionality() {
     let st1mark = [60, 55, 40];
     let sum = st1mark.reduce((acc, currentvalue) => acc + currentvalue, 0)
-    let avergare = sum / st1mark.length
-    console.log(`Sara average ==> ${Math.floor(avergare)}`);
+    let average = sum / st1mark.length
+    console.log(`Sara average ==> ${Math.floor(average)}`);
 
+    if (average < 50) {
+        console.log(`${students[1].name} is failed`);
+
+    }
+
+    let distinationlist = []
+
+    students.filter((all) => {
+        let sum = all.marks.reduce((acc, currentvalue) => acc + currentvalue, 0)
+        let average = sum / all.marks.length
+
+        if (average < 80) {
+            console.log(`${all.name} name is put in the distination list `);
+            distinationlist.push(all.name)
+        }
+
+
+    })
+    console.log(distinationlist);
+
+    students.filter((hihgest) => {
+        let sum = hihgest.marks.reduce((acc, currentvalue) => acc + currentvalue, 0)
+        let average = sum / hihgest.marks.length
+        let hihgestave = 90;
+
+        if (average > hihgestave) {
+            console.log(`${hihgest.name} you have the hihgest average`);
+            console.log(`${hihgest.name} prcentage is ${average}`);
+
+        }
+    })
+
+    let join = students.map((student) => student.name).join(",")
+    console.log(students);
+    
 }
 
 allfucntionality()
